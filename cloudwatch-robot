@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+from datetime import datetime
+
+import boto
+import psutil
+
+def main():
+    cloudwatch = boto.connect_cloudwatch()
+
+    available_memory = psutil.virtual_memory().available
+
+    cloudwatch.put_metric_data('memory', 'available', available_memory, datetime.now(), 'Bytes')
+
+if __name__ == '__main__':
+    main()
+

@@ -1,0 +1,4 @@
+boto==2.5.2
+git-remote-helpers==0.1.0
+psutil==0.6.1
+wsgiref==0.1.2
